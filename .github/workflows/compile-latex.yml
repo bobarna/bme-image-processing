@@ -1,3 +1,5 @@
+# Based on https://github.com/dgerosa/writeapaper/blob/main/.github/workflows/writeapaper.yml
+
 name: compile-latex
 on:
   push:
@@ -43,6 +45,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: build
+          publish_dir: ./github_deploy
+          publish_branch: gh_pages
           force_orphan: true
