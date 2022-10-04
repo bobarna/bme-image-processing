@@ -4,3 +4,9 @@
 *.aux
 *.log
 *.out
+docs/main-blx.bib
+*.bbl
+*.blg
+*.dvi
+docs/main.run.xml
+*.gz
