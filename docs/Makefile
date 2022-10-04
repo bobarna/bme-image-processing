@@ -5,9 +5,9 @@ BUILD_DIR := ./build
 ARTIFACT_DIR := ../artifacts
 
 # Create the pdf in BUILD_DIR and clean build files
-build: main.pdf move clean
+build: proposal.pdf move clean
 
-artifacts: main.pdf
+artifacts: proposal.pdf
 	mkdir $(ARTIFACT_DIR)
 	mv $< $(ARTIFACT_DIR)
 
