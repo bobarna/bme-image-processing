@@ -1,18 +1,18 @@
 ALL = $(wildcard *.sty *.tex)
-PAPER := main
+PAPER := proposal
 BUILD_DIR := ./build
 
 ARTIFACT_DIR := ../artifacts
 
 # Create the pdf in BUILD_DIR and clean build files
-build: proposal.pdf move clean
+build: $(PAPER).pdf move clean
 
-artifacts: proposal.pdf
+artifacts: $(PAPER).pdf
 	mkdir $(ARTIFACT_DIR)
 	mv $< $(ARTIFACT_DIR)
 
 # Call with e.g. "make main.pdf"
-%.pdf: %.tex 
+%.pdf: %.tex $(wildcard sections/*.tex)
 	pdflatex $<
 	- bibtex $*
 	pdflatex $<
