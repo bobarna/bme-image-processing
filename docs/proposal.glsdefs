@@ -1,0 +1,28 @@
+\glsdefs@newdocentry{yolo}%
+{%
+name={YOLO},%
+sort={YOLO},%
+type={acronym},%
+first={You Only Look Once\glsspace (YOLO)},%
+firstplural={You Only Look Once\acrpluralsuffix \glsspace (YOLO\acrpluralsuffix )},%
+text={YOLO},%
+plural={YOLO\acrpluralsuffix },%
+description={You Only Look Once},%
+descriptionplural={You Only Look Once\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={You Only Look Once},%
+longplural={You Only Look Onces},%
+short={YOLO},%
+shortplural={YOLOs},%
+counter={page},%
+parent={},%
+%
+}%
+
