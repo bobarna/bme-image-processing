@@ -1,5 +1,3 @@
-# LaTeX output files
-*.pdf
 # LaTeX temp files
 *.aux
 *.log
@@ -10,3 +8,8 @@ docs/main-blx.bib
 *.dvi
 docs/main.run.xml
 *.gz
+
+# Output folders and files
+artifacts
+docs/build
+docs/*.pdf
