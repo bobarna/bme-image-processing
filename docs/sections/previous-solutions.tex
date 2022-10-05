@@ -1,4 +1,39 @@
-Refer to current state-of-the-art, etc.
 
-\cite{survOnMet}
-\cite{changShyLi}
+%---Section intro-------------------
+
+\ac{alpr} has been in the focus of many researches in the past years.
+We have surveyed some of the most recent and most promising works in this field.
+Our research was simplified due to a recently published survey paper \cite{survOnMet}.
+This publication is giving an exhaustive list of different methods and practices used in \ac{alpr}.
+We would like to mention some of the techniques stated in the said paper.
+
+%---Gergő's work-------------------
+
+Texture-based methods use the presence of characters the license plate is the basis for license plate recognition. Significant color difference between the board and its characters, creates a frequent color transition. Therefore, if the image is grayscale, there is a remarkable difference between the characters and the background of the board. This creates a unique pixel intensity distribution in the region of the plate. Plate region should have a high edge density. This is used in edge-based systems. In \cite{HongFuJiaHuan} the authors used scan-line technique for license plate detection.
+
+%---Zoli's work-------------------
+
+
+In one of the highly rated methods according to \cite{survOnMet} is based on the
+\ac{yolo} detector.  This \ac{alpr} system is introduced in
+\cite{DBLP:journals/corr/abs-1909-01754}. \ac{yolo} was first published in
+\cite{redmon2016look} as a novel object detection method.  The name is coming
+from the fact that it performs the detection by applying a single neural network
+to the full image.  This network divides the image into regions and predicts
+bounding boxes and probabilities for each region.  Building on this method the
+authors achieved a license plate recognition rate of $96.9\%$.  The method was
+tested on multiple different datasets with outstanding results.  Besides the
+novel approach the authors of this work also contributed by manually labelling
+$38,351$ bounding boxes on $6,239$ images from public datasets.  They made these
+annotations available to the public.
+
+A benchmark for \ac{alpr} is showcased in \cite{DBLP:journals/corr/GoncalvesSMS16}. More specifically this benchmark is composed of a dataset helping the \ac{lpcs} step. High success rate of this step is crucial for end-to-end success of \ac{alpr}. In this paper besides the dataset the authors are proposing a new evaluation measure regarding the location of the bounding box within the ground-truth annotation. To further optimise the \ac{lpcs} step they suggest a more straightforward approach to perform it efficiently.
+
+
+
+
+
+
+
+
+
