@@ -26,3 +26,59 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{alpr}%
+{%
+name={ALPR},%
+sort={ALPR},%
+type={acronym},%
+first={Automatic License Plate Recognition\glsspace (ALPR)},%
+firstplural={Automatic License Plate Recognition\acrpluralsuffix \glsspace (ALPR\acrpluralsuffix )},%
+text={ALPR},%
+plural={ALPR\acrpluralsuffix },%
+description={Automatic License Plate Recognition},%
+descriptionplural={Automatic License Plate Recognition\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Automatic License Plate Recognition},%
+longplural={Automatic License Plate Recognitions},%
+short={ALPR},%
+shortplural={ALPRs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{lpcs}%
+{%
+name={LPCS},%
+sort={LPCS},%
+type={acronym},%
+first={License Plate Character Segmentation\glsspace (LPCS)},%
+firstplural={License Plate Character Segmentation\acrpluralsuffix \glsspace (LPCS\acrpluralsuffix )},%
+text={LPCS},%
+plural={LPCS\acrpluralsuffix },%
+description={License Plate Character Segmentation},%
+descriptionplural={License Plate Character Segmentation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={License Plate Character Segmentation},%
+longplural={License Plate Character Segmentations},%
+short={LPCS},%
+shortplural={LPCSs},%
+counter={page},%
+parent={},%
+%
+}%
+
