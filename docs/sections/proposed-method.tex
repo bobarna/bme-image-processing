@@ -1,7 +1,16 @@
-Outline our proposed method
+We propose a two-phase method for \ac{alpr}. First, we will train a \ac{NN} to
+recognize license plates on an image. Then, we feed the recognized \ac{LP} to
+a second \ac{NN}, trained for the task of \ac{OCR} of \ac{LP}s.
 
-TODO figure for training
+For the object detection part, we will use a method based on
+\ac{yolo}(\cite{redmon2016look}), in a similar vein as
+\cite{DBLP:journals/corr/abs-1909-01754}. 
 
-TODO figure for the deployed solution
+\subsection{Implementation}
+We plan to implement both \ac{NN} components with PyTorch (\cite{pytorch}).
+For cutting out the \ac{LP} from the image, we will use the OpenCV library
+(\cite{opencv}).
 
-What kind of data are we going to use?
+For data, we will rely on existing benchmark datasets for the most part (e.g.
+\cite{DBLP:journals/corr/GoncalvesSMS16}). We focus on Hungarian \ac{LP}s, but
+will probably have to resort to the use of internation datasets.
