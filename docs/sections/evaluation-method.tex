@@ -1,6 +1,23 @@
-Propose the evaluation metrics, and the possibility of using real life data
-later on.
+We will consider different cases depending on the difficulty of the given image,
+which will be determined based on how well our solution performs under
+the given (visual) setting. Based on this, we will categorize these cases by
+perceived difficulty, and show examples.
 
-There is a huge number of variables, which can effect the effectivity of the program for example:
-the distance of the vehicle, the wheather and lighting strength. The plan is to make difficulty categories, with the combination
-of these parameters. With these categories we can test the programs effectiveness categorised by difficulties.
+These are some of the settings we expect to make \ac{alpr} more difficult:
+\begin{itemize}
+    \item Direct sunlight 
+    \item Partial occlusion of the license plate 
+    \item Miscellaneous weather effects such as rain or fog
+    \item Small size of the licence plate (i.e. the object is further away)
+\end{itemize}
+
+We will examine which of these settings introduce the most perceived noise, thus
+decreasing the effectiveness of our solution.
+
+Other than these, -- as is the case with all learning-based methods, -- there is
+an inherent uncertainty on the generalization capabilities of our solution.
+After training and testing our solution on a predefined dataset, the real trial
+will be generalizing to photos we never encountered, as these images will be
+out-of-distribution for sure. Thus, we plan to finish our project with
+evaluating our solution \textit{in the wild}, measuring its robustness on
+real-life data.
