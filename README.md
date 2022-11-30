@@ -4,6 +4,9 @@ University of Technology and Economics.
 
 [proposal.pdf](https://bobarna.github.io/bme-image-processing/proposal.pdf)
 
+## Licence Plate Object Detection
+See: [https://github.com/bobarna/yolov7-number-plates](https://github.com/bobarna/yolov7-number-plates)
+
 ## Building the Proposal Locally
 ### Requirements
 #### Ubuntu
