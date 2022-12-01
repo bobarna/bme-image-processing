@@ -15,7 +15,7 @@ jobs:
   deploy_proposal:
     runs-on: ubuntu-latest
     env:
-      FILE: proposal.pdf
+      FILE: project-summary.pdf
       DIR: docs/project-summary
     steps:
       - name: Checkout
