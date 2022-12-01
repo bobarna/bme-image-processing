@@ -2,7 +2,7 @@ ALL = $(wildcard *.sty *.tex)
 PAPER := proposal
 BUILD_DIR := ./build
 
-ARTIFACT_DIR := ../artifacts
+ARTIFACT_DIR := ../../artifacts
 
 # Create the pdf in BUILD_DIR and clean build files
 build: $(PAPER).pdf move clean
