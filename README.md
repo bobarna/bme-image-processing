@@ -1,8 +1,9 @@
-# bme-image-processing
+# Automatic Number Plate Recognition
 Group homework for the 7th semester class Image Processing at the Budapest
 University of Technology and Economics.
 
-[proposal.pdf](https://bobarna.github.io/bme-image-processing/proposal.pdf)
+- [project_summary.pdf](https://bobarna.github.io/bme-image-processing/project_summary.pdf)
+- [proposal.pdf](https://bobarna.github.io/bme-image-processing/proposal.pdf)
 
 ## Licence Plate Object Detection
 See: [https://github.com/bobarna/yolov7-number-plates](https://github.com/bobarna/yolov7-number-plates)
