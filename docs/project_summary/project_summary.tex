@@ -1,0 +1,60 @@
+\documentclass[twoside,11pt]{article}
+
+\usepackage{jmlr2e}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, latexsym}
+\usepackage{tikz}
+\usepackage{xspace}
+\usepackage{wrapfig}
+\usepackage{xcolor}  % Coloured text etc.
+\usepackage[printonlyused,withpage]{acronym}
+
+% For notes
+% 
+\usepackage[colorinlistoftodos,prependcaption]{todonotes}
+%
+
+\input{acronyms.tex}
+
+\firstpageno{1}
+
+\begin{document}
+
+\title{
+    Automatic Number-Plate Recognition\\
+    Image Processing Group Project Summary\\
+    2022/23 Fall Semester
+}
+
+\author{\name Barnabás Börcsök
+    \email barnabas.borcsok@edu.bme.hu
+    \AND
+    \name Gergő Haragos
+    \email geri.haragos@gmail.com
+   \AND
+    \name Zoltán Simon
+    \email zoltan.simon@edu.bme.hu
+   \AND
+    \name Bence Sándor Szabó 
+    \email szabo.bence.sandor@gmail.com
+   \\\vfill\hfill\addr Budapest University of Technology and Economics
+}
+
+\maketitle
+
+\input{sections/introduction.tex}
+
+\input{sections/previous-solutions}
+
+\input{sections/method.tex}
+
+\input{sections/evaluation.tex}
+
+
+\newpage
+\bibliography{literature.bib}
+\newpage
+
+
+\end{document}
