@@ -1,5 +1,5 @@
 ALL = $(wildcard *.sty *.tex)
-PAPER := project_summary
+PAPER := project-summary
 BUILD_DIR := ./build
 
 ARTIFACT_DIR := ../../artifacts
@@ -11,7 +11,7 @@ artifacts: $(PAPER).pdf
 	mkdir $(ARTIFACT_DIR)
 	mv $< $(ARTIFACT_DIR)
 
-# Call with e.g. "make main.pdf"
+# Call with e.g. "make project-summary.pdf"
 %.pdf: %.tex $(wildcard sections/*.tex)
 	pdflatex $<
 	- bibtex $*
