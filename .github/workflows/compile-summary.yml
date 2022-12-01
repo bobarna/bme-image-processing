@@ -1,0 +1,38 @@
+# Based on https://github.com/dgerosa/writeapaper/blob/main/.github/workflows/writeapaper.yml
+
+name: compile-summary
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  # Allows the worflow to be started manually
+  workflow_dispatch:
+
+jobs:
+  deploy_proposal:
+    runs-on: ubuntu-latest
+    env:
+      FILE: proposal.pdf
+      DIR: docs/project-summary
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install texlive
+        run: sudo apt-get update && sudo apt-get install texlive texlive-publishers texlive-science latexmk cm-super
+      - name: Build LaTeX
+        run: cd ${{env.DIR}} && make artifacts
+      - name: Upload PDF Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{env.FILE}}
+          path: artifacts/${{env.FILE}}
+      - name: Deploy on gh-pages Branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./artifacts
+          publish_branch: gh_pages
+          force_orphan: true
