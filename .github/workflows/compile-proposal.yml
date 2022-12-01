@@ -1,6 +1,6 @@
 # Based on https://github.com/dgerosa/writeapaper/blob/main/.github/workflows/writeapaper.yml
 
-name: compile-latex
+name: compile-proposal
 on:
   push:
     branches:
@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FILE: proposal.pdf
-      DIR: docs
+      DIR: docs/proposal
     steps:
       - name: Checkout
         uses: actions/checkout@v2
