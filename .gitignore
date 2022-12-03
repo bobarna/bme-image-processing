@@ -12,4 +12,5 @@ docs/main.run.xml
 # Output folders and files
 artifacts
 docs/build
-docs/*.pdf
+*.pdf
+docs/*/build/*.pdf
