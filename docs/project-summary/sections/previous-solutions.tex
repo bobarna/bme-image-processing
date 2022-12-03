@@ -4,22 +4,22 @@
 \subsection{Automatic Number-Plate Recognition}
 \label{previous-solutions-anpr}
 % Section label
-In the past years many research projects have been focused on \ac{alpr}.
+In the past years many research projects have been focused on \ac{ALPR}.
 We have surveyed some of the most recent and most promising works in this field.
 A recent survey by \cite{survOnMet} gives an overview of different methods and
-practices used in \ac{alpr}.
+practices used in \ac{ALPR}.
 
 Texture-based methods use characters present on the \ac{LP} as the basis for
-\ac{alpr}. Significant color difference between the board and its characters
+\ac{ALPR}. Significant color difference between the board and its characters
 creates a high-frequency color transition. If the image is grayscale,
 there is an easy to distinguish change of colors between the characters and the
 background of the board. This creates a unique pixel intensity distribution in
 the region of the plate. The plate region should have a high edge density. This
 is used in edge-based systems. In \cite{HongFuJiaHuan} the authors used
-scan-line technique for \ac{alpr}.
+scan-line technique for \ac{ALPR}.
 
 Introduced by \cite{redmon2016look} as a novel object detection method,
-\ac{yolo} serves as the basis for the \ac{alpr} introduced by
+\ac{yolo} serves as the basis for the \ac{ALPR} introduced by
 \cite{DBLP:journals/corr/abs-1909-01754}.
 The naming of \ac{yolo} comes from the fact that it performs the object detection
 for the full image in a single pass. The employed \ac{NN} divides the image
@@ -29,10 +29,10 @@ $96.9\%$.  The method was tested on multiple different datasets with outstanding
 results.  Besides the novel approach, the authors of this work also released
 a public dataset of $38,351$ manually labeled bounding boxes on $6,239$ images.
 
-A benchmark for \ac{alpr} is introduced by
+A benchmark for \ac{ALPR} is introduced by
 \cite{DBLP:journals/corr/GoncalvesSMS16}. This benchmark is
 composed of a dataset helping the \ac{lpcs} step. High success rate of this step
-is crucial for end-to-end success of \ac{alpr}. Besides the dataset, the authors
+is crucial for end-to-end success of \ac{ALPR}. Besides the dataset, the authors
 also propose a new evaluation measure of the location of the bounding
 box within the ground-truth annotation. To further optimise the \ac{lpcs} step,
 they suggest a more straightforward approach to perform it efficiently.
