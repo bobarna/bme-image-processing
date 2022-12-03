@@ -4,10 +4,26 @@
 
 \todo[inline]{Write about Precision/Recall, etc.}
 
-We will consider different cases depending on the difficulty of the given image,
-which will be determined based on how well our solution performs under
-the given (visual) setting. Based on this, we will categorize these cases by
-perceived difficulty, and show examples.
+\subsection{YOLO Object Detection}
+Our main goal is to never miss the detection of a potential license plate. This
+means that we favor recall over precision, which means that we want the correct
+license plate amongst the set of detected objects even if this means an
+increased number of false positives.
+
+Our solution achieves \todo{}$\%$ precision on our test data. 
+
+Figure \todo{} shows random detections in different scenarios. We cut out each
+of the detected objects to separate image files (Figure\todo{}), and these will
+be the input of the next stage of our pipeline.
+
+\subsection{Optical Character Recognition (OCR)}
+
+
+\subsection{Qualitative Comparison}
+For qualitative comparison, we consider scenarios with viewing conditions
+corresponding to more difficult visual settings. We categorize these cases by
+perceived difficulty, and show examples. Figure \todo{add figure} shows
+different settings. \todo[inline]{Evaluate which one is the hardest setting.}
 
 These are some of the settings we expect to make \ac{ALPR} more
 difficult:\todo[inline]{Create these comparisons, plot them in a figure.}
@@ -18,15 +34,16 @@ difficult:\todo[inline]{Create these comparisons, plot them in a figure.}
     \item Small size of the licence plate (i.e. the object is further away)
 \end{itemize}
 
-We will examine which of these settings introduce the most perceived noise, thus
-decreasing the effectiveness of our solution.
+\subsection{Final Test}
+As with any learning-based method, there is an inherent uncertainty on the
+generalization capabilities of our solution. Although we separeted our data into
+training, validation, and test data, these datasets might still exhibit
+similarities, and sampling test data out-of-distribution is inherently
+difficult.
 
-Other than these, -- as is the case with all learning-based methods, -- there is
-an inherent uncertainty on the generalization capabilities of our solution.
-After training and testing our solution on a predefined dataset, the real trial
-will be generalizing to photos we never encountered, as these images will be
-out-of-distribution for sure. Thus, we plan to finish our project with
-evaluating our solution \textit{in the wild}, measuring its robustness on
-real-life data.
+Thus, as a final test, we close the evaluation of our project with evaluating
+our solution \textit{in the wild}, measuring its robustness on real-life data.
 
-\todo[inline]{Add image results.}
+\todo[inline]{privacy $\to$ blur the actual car?}
+
+\todo[inline]{Add images taken with our phone camera.}
