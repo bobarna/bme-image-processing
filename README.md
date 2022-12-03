@@ -4,7 +4,7 @@ University of Technology and Economics.
 
 - [project-summary.pdf](https://bobarna.github.io/bme-image-processing/project-summary.pdf)
 
-## Licence Plate Object Detection
+## License Plate Object Detection
 See: [https://github.com/bobarna/yolov7-number-plates](https://github.com/bobarna/yolov7-number-plates)
 
 ## Building the Documents Locally with LaTeX
