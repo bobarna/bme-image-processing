@@ -5,13 +5,47 @@ means that we favor recall over precision, which means that we want the correct
 license plate amongst the set of detected objects even if this means an
 increased number of false positives.
 
-Our solution achieves \todo{}$\%$ precision on our test data. 
+Our solution achieves \todo{}$\%$ precision on our test data. test
 
-Figure \todo{} shows random detections in different scenarios. We cut out each
-of the detected objects to separate image files (Figure\todo{}). These cut out
-detections serve as the input of the next step of our \ac{ALPR} pipeline.
+\begin{figure}
+    \begin{subfigure}[b]{.55\textwidth}
+        \includegraphics[width=\textwidth]{figures/yolo/1000.jpg}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{.15\textwidth}
+        \includegraphics[width=\textwidth]{figures/yolo/1000_montage.png}
+    \end{subfigure}
+    \hfill\hfill
+    \\
+    \begin{subfigure}[b]{.55\textwidth}
+        \includegraphics[width=\textwidth]{figures/yolo/179.jpg}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{.4\textwidth}
+        \includegraphics[width=\textwidth]{figures/yolo/179_montage.png}
+    \end{subfigure}
+    \hfill
+    \label{fig:yolo-detection-montages}
+    \caption{Example YOLO detections, and the corresponding cut outs.
+        Background elements might get incorrectly labeled as number plates.  As
+        we mention later on, our goal is to get a high as possible recall. If
+        a lower false positive count was desired, we could increase the
+    confidence threshold.}
+\end{figure}
+
+Figure~\ref{fig:yolo-detection-montages}  shows random detections in different
+scenarios. We cut out each of the detected objects to separate image files. Some
+examples can be seen on Figure~\ref{fig:cutout-montage}.
+These cut out detections serve as the input of the next step of our \ac{ALPR}
+pipeline.
+\begin{figure}
+    \includegraphics[width=\textwidth]{figures/yolo/cutout_montage.jpg}
+    \label{fig:cutout-montage}
+    \caption{Some example object detection results that serve as the
+    input for the OCR stage.}
+\end{figure}
+
 \subsection{Optical Character Recognition (OCR)}
-
 
 \subsection{Qualitative Comparison}
 For qualitative comparison, we consider scenarios with viewing conditions
@@ -39,5 +73,4 @@ Thus, as a final test, we close the evaluation of our project with evaluating
 our solution \textit{in the wild}, measuring its robustness on real-life data.
 
 \todo[inline]{privacy $\to$ blur the actual car?}
-
 \todo[inline]{Add images taken with our phone camera.}
