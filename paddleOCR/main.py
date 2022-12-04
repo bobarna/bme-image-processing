@@ -25,8 +25,8 @@ def preprocess(img_dir_path, cleared_path):
 
 
 def main():
-    img_dir_path = './data/cutouts/'
-    cleared_path = './data/cleared/'
+    img_dir_path = './images/found-classes'
+    cleared_path = './images/cleared/'
 
     preprocess(img_dir_path, cleared_path)
 
