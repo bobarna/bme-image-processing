@@ -1,9 +1,4 @@
 \section{Evaluation}
-
-\todo[inline]{Write this section, actualize it to what we actually did.}
-
-\todo[inline]{Write about Precision/Recall, etc.}
-
 \subsection{YOLO Object Detection}
 Our main goal is to never miss the detection of a potential license plate. This
 means that we favor recall over precision, which means that we want the correct
@@ -13,9 +8,8 @@ increased number of false positives.
 Our solution achieves \todo{}$\%$ precision on our test data. 
 
 Figure \todo{} shows random detections in different scenarios. We cut out each
-of the detected objects to separate image files (Figure\todo{}), and these will
-be the input of the next stage of our pipeline.
-
+of the detected objects to separate image files (Figure\todo{}). These cut out
+detections serve as the input of the next step of our \ac{ALPR} pipeline.
 \subsection{Optical Character Recognition (OCR)}
 
 
