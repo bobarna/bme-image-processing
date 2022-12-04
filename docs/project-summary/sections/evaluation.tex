@@ -25,12 +25,12 @@ Our solution achieves \todo{}$\%$ precision on our test data. test
         \includegraphics[width=\textwidth]{figures/yolo/179_montage.png}
     \end{subfigure}
     \hfill
-    \label{fig:yolo-detection-montages}
     \caption{Example YOLO detections, and the corresponding cut outs.
         Background elements might get incorrectly labeled as number plates.  As
         we mention later on, our goal is to get a high as possible recall. If
         a lower false positive count was desired, we could increase the
     confidence threshold.}
+    \label{fig:yolo-detection-montages}
 \end{figure}
 
 Figure~\ref{fig:yolo-detection-montages}  shows random detections in different
@@ -40,9 +40,9 @@ These cut out detections serve as the input of the next step of our \ac{ALPR}
 pipeline.
 \begin{figure}
     \includegraphics[width=\textwidth]{figures/yolo/cutout_montage.jpg}
-    \label{fig:cutout-montage}
     \caption{Some example object detection results that serve as the
     input for the OCR stage.}
+    \label{fig:cutout-montage}
 \end{figure}
 
 \subsection{Optical Character Recognition (OCR)}
