@@ -1,5 +1,6 @@
 import os
 import csv
+from pathlib import Path
 
 from src.clear_photo import *
 from tqdm import tqdm
@@ -21,19 +22,21 @@ def preprocess(img_dir_path, cleared_path):
         img = cv2.imread(img_dir_path + file, cv2.IMREAD_COLOR)
         img2 = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         img_cleared = clear(img)
-        cv2.imwrite(cleared_path + file, img_cleared)
+        cv2.imwrite(str(cleared_path / file), img_cleared)
 
 
 def main():
-    img_dir_path = './images/found-classes'
-    cleared_path = './images/cleared/'
+    img_dir_path = './images/cutouts/'
+    cleared_path = Path('./images/cleared/')
+    # Create it cleared path, if necessary
+    cleared_path.mkdir(parents=True, exist_ok=True)
 
     preprocess(img_dir_path, cleared_path)
 
     with open(file='output.csv', mode='w', newline='') as output:
         writer = csv.writer(output, delimiter=';')
         for image_name in os.listdir(cleared_path):
-            result = ocr.ocr(cleared_path + '/' + image_name)
+            result = ocr.ocr(str(cleared_path / image_name))
             txts = [line[1][0] for line in result[0]]
             scores = [line[1][1] for line in result[0]]
             row = [image_name]
