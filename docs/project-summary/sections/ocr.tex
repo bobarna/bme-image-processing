@@ -37,7 +37,7 @@ sequences. LSTM consists of a memory cell and three multiplicative gates, namely
 input, output and forget gates. It has made a huge improvement in its speech
 recognition function.  Transcription is a process that produces frame-by-frame
 predictions into a tag sequence using RNN. Each input in CTC is a sequence
-y = y1, ... , yT, where T is the length of the sequence.
+$y = y1, ... , yT$, where $T$ is the length of the sequence.
 
 We have developed a neural network that can be trained end-to-end on pairs of
 images, eliminating the manual labeling of individual components on the training
@@ -50,8 +50,6 @@ lexicon-based transcription. On the other hand, the computational cost increases
 with larger d, due to the longer BKtree search time. CRNN outperforms commercial
 OMR engines such as Capella Scan and PhotoScore by a wide margin.
 
-% here the picture crnn
-
 CRNN uses convolutional features that are highly robust against noise and bias.
 It can be easily applied to other image-based sequence recognition
 probabilities, requiring minimal domain knowledge.  CRNN, a new neural network
@@ -59,10 +57,3 @@ architecture that integrates the advantages of both deep convolutional neural
 networks and recurrent neural networks. It runs directly on coarse-level labels
 (such as words) and does not require detailed annotations for each eleventh
 (i.e., character) in the training phase.
-
-
-
-
-
-
-
