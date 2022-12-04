@@ -31,7 +31,7 @@ def main():
     # Create it cleared path, if necessary
     cleared_path.mkdir(parents=True, exist_ok=True)
 
-    #preprocess(img_dir_path, cleared_path)
+    preprocess(img_dir_path, cleared_path)
 
     with open(file='output.csv', mode='w', newline='') as output:
         writer = csv.writer(output, delimiter=';')
