@@ -1,4 +1,4 @@
-![Pipeline Teaser](/docs/project-summary/figures/pipleine2_cut.png "")
+![Pipeline Teaser](/docs/project-summary/figures/pipeline2_cut.png "")
 # Automatic Number Plate Recognition
 Group homework for the 7th semester class Image Processing at the Budapest
 University of Technology and Economics.
