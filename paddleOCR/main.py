@@ -31,7 +31,7 @@ def main():
     # Create it cleared path, if necessary
     cleared_path.mkdir(parents=True, exist_ok=True)
 
-    preprocess(img_dir_path, cleared_path)
+    #preprocess(img_dir_path, cleared_path)
 
     with open(file='output.csv', mode='w', newline='') as output:
         writer = csv.writer(output, delimiter=';')
@@ -39,7 +39,8 @@ def main():
             result = ocr.ocr(str(cleared_path / image_name))
             txts = [line[1][0] for line in result[0]]
             scores = [line[1][1] for line in result[0]]
-            row = [image_name]
+            original_img_name = image_name.split('_')[0:-1]
+            row = [str(''.join(original_img_name) + '.jpg')]
             processed_txts = ['']   # Adding empty string to filter out empty predictions
             for txt in txts:        # Multiple predictions are available
                 txt = txts[0]
