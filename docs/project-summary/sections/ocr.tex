@@ -3,7 +3,6 @@
 \label{subsec:ocr}
 %--------------------------------------------------
 
-
 In this subsection we discuss the implementation details of the used \ac{OCR} pipeline.
 Our work is based on the paper proposed by Shi et al. \cite{7801919}.
 \begin{figure}
@@ -12,6 +11,54 @@ Our work is based on the paper proposed by Shi et al. \cite{7801919}.
 	\label{fig:ocr_architecture}
 \end{figure}
 
+We deal with the classic problem of computer vision, image-based sequence
+recognition. Serial objects, such as scene text, are usually recognized as
+a sequence of tags rather than a single tag. RNNs can be trained and optimized
+end-to-end, but require complex post-processing steps before being used. CRNN is
+a combination of DCNN and RNN and forms an end-to-end system for sequence
+recognition. It can be learned directly from sequence labels, does not require
+detailed annotations (such as words), and only requires height normalization in
+the training and testing sessions.
+
+A CRNN is a type of Recurrent Neural Network (RNN) that can be trained to make
+a prediction for each frame of a sequence of features that is output by
+convolutional layers. In CRNN, each column of the field maps corresponds to
+a region of a rectangle (called the receptive field) of the original image, and
+the regions are in the same order as the corresponding columns in the feature
+maps from left to right. A deep bidirectional recurrent neural network (CRNN) is
+built on top of convolutional layers as recurrent layers.
+
+The recurrent layers predict a label distribution yt for each frame xt of the
+feature sequence. Each time it receives a frame in the sequence, it updates its
+internal state with a non-linear function that takes both the current input
+state and the past state as input. Long-Short-Term Memory (LSTM) is a type of
+RNN designed to capture long-range dependencies that often occur in image-based
+sequences. LSTM consists of a memory cell and three multiplicative gates, namely
+input, output and forget gates. It has made a huge improvement in its speech
+recognition function.  Transcription is a process that produces frame-by-frame
+predictions into a tag sequence using RNN. Each input in CTC is a sequence
+y = y1, ... , yT, where T is the length of the sequence.
+
+We have developed a neural network that can be trained end-to-end on pairs of
+images, eliminating the manual labeling of individual components on the training
+images. The network is trained with error differences calculated using the
+backpropagation algorithm and stochastic gradient descent (SGD).  CRNN is not
+limited to recognizing a word in a known dictionary and can handle random
+strings ,sentences or other scripts.  The recognition accuracy is plotted as
+a function of d. A larger d results in more candidates, thus a more accurate
+lexicon-based transcription. On the other hand, the computational cost increases
+with larger d, due to the longer BKtree search time. CRNN outperforms commercial
+OMR engines such as Capella Scan and PhotoScore by a wide margin.
+
+% here the picture crnn
+
+CRNN uses convolutional features that are highly robust against noise and bias.
+It can be easily applied to other image-based sequence recognition
+probabilities, requiring minimal domain knowledge.  CRNN, a new neural network
+architecture that integrates the advantages of both deep convolutional neural
+networks and recurrent neural networks. It runs directly on coarse-level labels
+(such as words) and does not require detailed annotations for each eleventh
+(i.e., character) in the training phase.
 
 
 
