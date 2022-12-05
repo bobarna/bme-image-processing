@@ -21,7 +21,7 @@ number-plates-hun/labels``
 ``python cutout.py number-plates-hun``
 6. Results are in the `number-plates-hun/found-classes` folder.
 
-## Running inference (detecting licence plates)
+## Running inference (detecting license plates)
 ```
 python detect.py --weights weights-number-plates.pt --img-size 448 --source number-plates-hun/ --name test-number-plates --save-txt --save-conf
 ```
