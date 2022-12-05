@@ -9,6 +9,42 @@ license plate recognition is actually reading the plate.  After we have assigned
 a bounding box the rest is up to an \ac{OCR} subsystem.  An \ac{OCR} recognises
 characters printed on the plate.
 
+\subsection{YOLO Object Detection}
+We used transfer learning to train a YOLOv7 based on the original implementation
+of the paper by \cite{yolov7}. We detect a single object on each image: license
+plates. We trained our model for $100$ epochs. We achieved around $90\%$
+precision on both training, data and validation data, which carried over to
+images of Hungarian license plates as well.
+
+Although the goal of the project is the detect Hungarian license plates, we
+observed that a model trained on international license plates generalizes well
+enough for the object detection problem. This also made us easier to find
+datasets online, as our Hungarian license plate dataset did not include bounding
+box data. (See our code repository
+\footnote{\url{https://github.com/bobarna/bme-image-processing}} for more
+details on the datasets used.)
+
+We used a test data set not seen during training for verifying the model's
+generalization capabilities after training. Performance on a randomly sampled
+subset of these test images can be seen in Figure~\ref{fig:yolo-test-eval}.
+
+These results show that the model detects the license plates in almost all
+cases. Although we can see that the model usually gave a high confidence to the
+right detection, while further (usually incorrect) detections have been given
+a lower confidence value, we intentionally kept the confidence threshold low in
+order not to miss harder to see license plates, even when some other object got
+incorrectly recognized with a higher confidence.
+
+\begin{figure}
+        \centering
+        \includegraphics[height=.5\textheight]{figures/transfer-learning-eval/test_batch0_pred.jpg}
+        \includegraphics[height=.5\textheight]{figures/transfer-learning-eval/test_batch2_pred.jpg}
+        \caption{YOLOv7 transfer learning performance on test data. Confidence
+        values are also shown next to each detection.}
+        \label{fig:yolo-test-eval}
+\end{figure}
+
+
 \include{sections/weatherfilter.tex}
 \include{sections/ocr.tex}
 \include{sections/preprocessing.tex}
