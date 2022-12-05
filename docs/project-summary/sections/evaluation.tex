@@ -47,36 +47,31 @@ pipeline.
 
 \subsection{Optical Character Recognition (OCR)}
 
-When it comes to \ac{OCR} we first tried to train our own \ac{NN}.
-We have based our work on the architecture described in Shi et al. \cite{7801919}.
-Unfortunately in the end this endeavour did not succeed.
-We have gained a lot of insight into the given pipeline.
-Some parts of this \ac{OCR} implementation worked successfully.
-First we trained this \ac{NN} with automatically generated text samples.
-The text generation was achieved with a \emph{Python} console application called \emph{trdg}.
-This allowed us to generate images based on a text document.
-These images contained noise and different levels of distortions.
-This was meant to precede the training on real world data.
+When it comes to \ac{OCR} we first tried to train our own \ac{NN}.  We have
+based our work on the architecture described in Shi et al. \cite{7801919}.
+Unfortunately in the end this endeavour did not succeed.  We have gained a lot
+of insight into the given pipeline.  Some parts of this \ac{OCR} implementation
+worked successfully.  First we trained this \ac{NN} with automatically generated
+text samples.  The text generation was achieved with a \emph{Python} console
+application called \emph{trdg}.  This allowed us to generate images based on
+a text document.  These images contained noise and different levels of
+distortions.  This was meant to precede the training on real world data.
 
-We also experimented with different data augmentation methods.
-These methods included changing the lighting conditions, skewing images, applying noise and others.
-One of the used augmentation algorithms is capable of changing the weather conditions of the scene on the picture.
-Besides applying distortions for data augmentation purposes, we have used inverse, denoising methods to improve the confidence of the recognition process.
+We also experimented with different data augmentation methods.  These methods
+included changing the lighting conditions, skewing images, applying noise and
+others.  One of the used augmentation algorithms is capable of changing the
+weather conditions of the scene on the picture.  Besides applying distortions
+for data augmentation purposes, we have used inverse, denoising methods to
+improve the confidence of the recognition process.
 
-After successful training and testing on the automatically generated data,
-we decided to train our model on the real world images.
-We used the provided test database containing cars with Hungarian license plates.
-The \ac{NN} was trained for hundred epochs.
-Each epoch contained fifty batches of images.
-One batch contained thirty-five images.
-After this amount of training the model began to struggle to further decrease the loss.
-At this point we decided to use a different model.
-In the final application we use the \emph{PaddleOCR} \cite{DBLP:journals/corr/abs-2009-09941}.
-
-
-
-
-
+After successful training and testing on the automatically generated data, we
+decided to train our model on the real world images.  We used the provided test
+database containing cars with Hungarian license plates.  The \ac{NN} was trained
+for hundred epochs.  Each epoch contained fifty batches of images.  One batch
+contained thirty-five images.  After this amount of training the model began to
+struggle to further decrease the loss.  At this point we decided to use
+a different model.  In the final application we use the \emph{PaddleOCR}
+\cite{DBLP:journals/corr/abs-2009-09941}.
 
 \subsection{Qualitative Comparison}
 For qualitative comparison, we consider scenarios with viewing conditions
@@ -93,15 +88,3 @@ difficult:\todo[inline]{Create these comparisons, plot them in a figure.}
     \item Small size of the licence plate (i.e. the object is further away)
 \end{itemize}
 
-\subsection{Final Test}
-As with any learning-based method, there is an inherent uncertainty on the
-generalization capabilities of our solution. Although we separeted our data into
-training, validation, and test data, these datasets might still exhibit
-similarities, and sampling test data out-of-distribution is inherently
-difficult.
-
-Thus, as a final test, we close the evaluation of our project with evaluating
-our solution \textit{in the wild}, measuring its robustness on real-life data.
-
-\todo[inline]{privacy $\to$ blur the actual car?}
-\todo[inline]{Add images taken with our phone camera.}
