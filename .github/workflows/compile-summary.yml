@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy_proposal:
+  deploy_summary:
     runs-on: ubuntu-latest
     env:
       FILE: project-summary.pdf
