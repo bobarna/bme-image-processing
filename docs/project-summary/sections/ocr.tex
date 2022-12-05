@@ -3,14 +3,18 @@
 \label{subsec:ocr}
 %--------------------------------------------------
 
-In this subsection we discuss the implementation details of the used \ac{OCR} pipeline.
-Our work is based on the method proposed by \cite{7801919}.
+
+When it comes to \ac{OCR} we experimented with different methods.
+Our first approach followed the architecture published by \cite{7801919}.
+Unfortunately at the end of the development cycle we had to use a different model, because the original method did not provide the desired results.
+In the final solution we utilize the \emph{paddleOCR} system by \cite{DBLP:journals/corr/abs-2009-09941}.
+Nevertheless we wanted to describe the original method proposed by \cite{7801919}, since this was in the focus of development for the majority of time.
+Thus the following section serves as a brief introduction to an otherwise promising \ac{OCR} architecture.
 \begin{figure}
 	\includegraphics[width=\textwidth]{figures/crnn.png}
 	\caption{The architecture published in \cite{7801919}}
 	\label{fig:ocr_architecture}
 \end{figure}
-
 We deal with the classic problem of computer vision, image-based sequence
 recognition. Serial objects, such as scene text, are usually recognized as
 a sequence of tags rather than a single tag. RNNs can be trained and optimized
