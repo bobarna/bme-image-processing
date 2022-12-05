@@ -1,6 +1,7 @@
-\subsection{Data Augmentation via Natural Weather Effects}
-We implemented the following natural-looking weather effects with OpenCV to
-verify the generalization of our method, and improve training:
+\subsection{Artifical Weather Effects}
+Inspired by \cite{weather-effects-tutorial}, we implemented the following
+natural-looking weather effects with OpenCV to verify the generalization of our
+method, and improve training:
 \begin{itemize}
     \item \emph{light-rain:} A little blur to the image and random generated lines
     \item \emph{normal-rain:} Same as light-rain, but more lines
@@ -39,7 +40,7 @@ We show these effects in action in Figure~\ref{fig:weather-effects}.
             \caption{Heavy rain. Even the object detection fails to pick up on
             the license plate present in the scene.}
         \end{subfigure}
-        \label{fig:weather-raines}
+        \label{fig:weather-rains}
     \end{subfigure}
     \begin{subfigure}[b]{\textwidth}
         \centering
@@ -65,7 +66,4 @@ We show these effects in action in Figure~\ref{fig:weather-effects}.
     step, and the preprocessing step, that serves as the input to the OCR step.}
     \label{fig:weather-effects}
 \end{figure}
-
-Initially, we implemented these methods following this tutorial: 
-\url{https://www.freecodecamp.org/news/image-augmentation-make-it-rain-make-it-snow-how-to-modify-a-photo-with-machine-learning-163c0cb3843f/}.
 

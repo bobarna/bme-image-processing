@@ -1,11 +1,9 @@
 \section{Evaluation}
 \subsection{YOLO Object Detection}
 Our main goal is to never miss the detection of a potential license plate. This
-means that we favor recall over precision, which means that we want the correct
-license plate amongst the set of detected objects even if this means an
-increased number of false positives.
-
-Our solution achieves \todo{}$\%$ precision on our test data. test
+means that we favor recall over precision: we want the correct license plate
+to be included in the set of detected objects even if this means an increased
+number of false positives.
 
 \begin{figure}
     \begin{subfigure}[b]{.55\textwidth}
@@ -38,6 +36,7 @@ scenarios. We cut out each of the detected objects to separate image files. Some
 examples can be seen on Figure~\ref{fig:cutout-montage}.
 These cut out detections serve as the input of the next step of our \ac{ALPR}
 pipeline.
+
 \begin{figure}
     \includegraphics[width=\textwidth]{figures/yolo/cutout_montage.jpg}
     \caption{Some example object detection results that serve as the
@@ -47,7 +46,7 @@ pipeline.
 
 \subsection{Optical Character Recognition (OCR)}
 
-When it comes to \ac{OCR} we first tried to train our own \ac{NN}.  We have
+When it comes to \ac{OCR}, we first tried to train our own \ac{NN}.  We have
 based our work on the architecture described in Shi et al. \cite{7801919}.
 Unfortunately in the end this endeavor did not succeed.  We have gained a lot
 of insight into the given pipeline.  Some parts of this \ac{OCR} implementation
@@ -76,11 +75,10 @@ a different model.  In the final application we use the \emph{PaddleOCR}
 \subsection{Qualitative Comparison}
 For qualitative comparison, we consider scenarios with viewing conditions
 corresponding to more difficult visual settings. We categorize these cases by
-perceived difficulty, and show examples. Figure \todo{add figure} shows
-different settings. \todo[inline]{Evaluate which one is the hardest setting.}
+perceived difficulty, and show examples. 
 
-These are some of the settings we expect to make \ac{ALPR} more
-difficult:
+In conclusion, we found these factors to correspond to an increased difficult
+for the \ac{ALPR} task:
 \begin{itemize}
     \item Direct sunlight 
     \item Partial occlusion of the license plate 
@@ -88,5 +86,7 @@ difficult:
     \item Small size of the license plate (i.e. the object is further away)
 \end{itemize}
 
-We implemented these effects in OpenCV, and can be seen in action in
-Figure~\ref{fig:weather-effects}.
+We implemented some of these effects in OpenCV, and show corresponding results
+in Figure~\ref{fig:weather-effects}.
+
+\include{sections/weatherfilter.tex}
