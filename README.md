@@ -5,6 +5,13 @@ University of Technology and Economics.
 
 - [project-summary.pdf](https://bobarna.github.io/bme-image-processing/project-summary.pdf)
 
+## Dependencies
+Install [Python](https://www.python.org/) packages with
+[pip](https://pip.pypa.io/en/stable/): 
+```
+pip install -r requirements.txt
+```
+
 ## TLDR Usage
 - Put images in the `images` folder.
 - `./detect.sh`
