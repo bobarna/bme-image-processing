@@ -5,6 +5,11 @@ University of Technology and Economics.
 
 - [project-summary.pdf](https://bobarna.github.io/bme-image-processing/project-summary.pdf)
 
+## TLDR Usage
+- Put images in the `images` folder.
+- `./detect.sh`
+- `output.csv` contains the results (in the root folder)
+
 ## Usage
 - Put images in the `images` folder.
 - Run YOLO object detection
