@@ -22,7 +22,7 @@ University of Technology and Economics.
 - License Plate Object Detection: [https://github.com/bobarna/yolov7-number-plates](https://github.com/bobarna/yolov7-number-plates)
 - OCR: we implemented 2 different methods, and ended up using paddleOCR
     - paddleOCR: `paddleOCR` folder
-    - custom OCR: `LicencePlateOCR` folder
+    - custom OCR: `LicensePlateOCR` folder
 
 ## Building the Documents Locally with LaTeX
 See `docs` folder.
