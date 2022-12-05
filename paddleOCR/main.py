@@ -39,7 +39,9 @@ def main():
             result = ocr.ocr(str(cleared_path / image_name))
             txts = [line[1][0] for line in result[0]]
             scores = [line[1][1] for line in result[0]]
-            original_img_name = image_name.split('_')[1:-1]
+            print(image_name.split('_'))
+            original_img_name = image_name.split('_')[0:-1]
+            print("{} -> {}".format(image_name, original_img_name))
             row = [str(''.join(original_img_name) + '.jpg')]
             processed_txts = ['']   # Adding empty string to filter out empty predictions
             for txt in txts:        # Multiple predictions are available
