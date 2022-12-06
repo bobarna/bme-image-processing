@@ -15,7 +15,10 @@ pip install -r requirements.txt
 ## TLDR Usage
 - Put images in the `images` folder.
 - `./detect.sh`
-- `output.csv` contains the results (in the root folder)
+- `output_original.csv` contains the results (in the root folder)
+- `output.csv` contains the results of each cutout 
+    - good for debugging purposes, and matching these against the detections in
+        `images/cutouts/`
 
 ## Usage
 - Put images in the `images` folder.
@@ -29,6 +32,9 @@ pip install -r requirements.txt
 - Run OCR on detections
     - `python paddleOCR/main.py`
 - `output.csv` contains the results (in the root folder)
+- Run `python fix_csv.py` to merge detections from the same image to the same
+    line, with the original file names
+- The final results are in `output_original.csv`
 
 ## Individual Components
 - License Plate Object Detection: [https://github.com/bobarna/yolov7-number-plates](https://github.com/bobarna/yolov7-number-plates)

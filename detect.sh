@@ -10,3 +10,7 @@ python3 cutout.py images
 # Run OCR on detections
 python3 paddleOCR/main.py
 # `output.csv` contains the results (in the root folder)
+
+# Merge detections from the same image to a single line with the original image
+# name
+python fix_csv.py
