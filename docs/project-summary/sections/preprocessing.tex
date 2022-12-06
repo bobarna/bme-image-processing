@@ -1,21 +1,35 @@
-After cutting the licenceplate we apply some preprocessing method with OpenCV-python:
+\subsection{Preprocessing for OCR}
+
+After cutting the license plate, we apply the following preprocessing methods
+with OpenCV:
 \begin{itemize}
-    \item \emph{Normalization:} For normalization we used a formula that we found on the internet \url{https://nextgeninvent.com/7-steps-of-image-pre-processing-to-improve-ocr-using-python/}.
-    \item \emph{Noise removal:} For the noise removal we used the 'fastNlMeansDenoisingColored' function of OpenCV.
-    \item \emph{Erodation:} For the erosion's kernel we used a 5x5 matrix of ones.
-    \item \emph{Blur clarification:} For the blur clarification we used a matrix with a value 9 center surrounded with -1 values.
-    \item \emph{Adaptive Threshold:} For this we used the 'adaptiveThreshold' function of OpenCV
+    \item \emph{Normalization:} using the \texttt{cv2.normalize} method.
+    \item \emph{Noise removal:} using the
+        \texttt{fastNlMeansDenoisingColored} function of OpenCV.
+    \item \emph{Erodation:} using a $5 \times 5$ kernel matrix of ones.
+    \item \emph{Blur clarification:} for the blur clarification, we used a matrix
+        with a value $9$ center surrounded with $-1$ values.
+    \item \emph{Adaptive Threshold:} using the \texttt{adaptiveThreshold}
+        function of OpenCV. 
 \end{itemize}
 
-This results a much better image for the OCR. It convert the image to binary and try to sharpen the label of the licenceplate. 
+This results in a much better image for the OCR, converting the image to
+grayscale and sharpening the label of the license plate. 
 
-\begin{align}
-Blur clarification kernel &= \begin{bmatrix}
-    -1, -1, -1\\
-    -1, 9, -1 \\
-    -1, -1, -1
-\end{bmatrix}
-\end{align}
+\begin{align*}
+    \text{Kernel}_{\text{erodation}}&= 
+    \begin{bmatrix}
+        1 & 1 & 1\\
+        1 & 1 & 1 \\
+        1 & 1 & 1
+    \end{bmatrix}\\
+    \text{Kernel}_{\text{blur clarification}}&= 
+    \begin{bmatrix}
+        -1 & -1 & -1\\
+        -1 & 9  & -1 \\
+        -1 & -1 & -1
+    \end{bmatrix}
+\end{align*}
 
 \begin{figure}
     \begin{subfigure}[b]{.45\textwidth}
@@ -44,6 +58,6 @@ Blur clarification kernel &= \begin{bmatrix}
         \includegraphics[width=\textwidth]{figures/preprocessafter3.jpg}
     \end{subfigure}
     \hfill
-    \caption{Example for preprocessing}
+    \caption{Preprocessing results.}
     \label{fig:preprocessing-fig}
 \end{figure}

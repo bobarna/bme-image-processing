@@ -9,7 +9,7 @@ on:
     # branches:
       # - main
   # Allows the worflow to be started manually
-  workflow_dispatch:
+  # workflow_dispatch:
 
 jobs:
   deploy_proposal:
