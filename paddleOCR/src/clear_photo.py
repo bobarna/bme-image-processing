@@ -27,20 +27,22 @@ def get_grayscale(image):
 
 
 def thresholding(image):
-    return cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
+    return  cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
 
 
-def clear(img):
+def clear(img, threshold = False):
     norm_img = np.zeros((img.shape[0], img.shape[1]))
     img = cv2.normalize(img, norm_img, 0, 255, cv2.NORM_MINMAX)
     img = remove_noise(img)
-    kernel = np.ones((3, 3), np.uint8)
+    kernelerrode = np.ones((3, 3), np.uint8)
     kernel = np.array([[-1, -1, -1],
                        [-1, 9, -1],
                        [-1, -1, -1]])
     image2 = get_grayscale(img)
-    image2 = cv2.erode(image2, kernel, iterations=1)
+    image2 = cv2.erode(image2, kernelerrode, iterations=1)
     image2 = cv2.filter2D(image2, -1, kernel)
-    image2 = thresholding(image2)
+    if threshold:
+        image2 = thresholding(image2)
+
     return image2
 

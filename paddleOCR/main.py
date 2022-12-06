@@ -20,10 +20,12 @@ def preprocess(img_dir_path, cleared_path):
     dir_list = os.listdir(img_dir_path)
     for file in tqdm(dir_list):
         img = cv2.imread(img_dir_path + file, cv2.IMREAD_COLOR)
-        img2 = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        #img2 = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        img_cleared = clear(img, True)
+        cv2.imwrite(str(cleared_path / str('T_' + file)), img_cleared)
         img_cleared = clear(img)
         cv2.imwrite(str(cleared_path / file), img_cleared)
-
+        cv2.imwrite(str(cleared_path / str('O_' + file)), img)
 
 def main():
     img_dir_path = './images/cutouts/'
@@ -35,14 +37,15 @@ def main():
 
     with open(file='output.csv', mode='w', newline='') as output:
         writer = csv.writer(output, delimiter=';')
+        table = []
         for image_name in os.listdir(cleared_path):
             result = ocr.ocr(str(cleared_path / image_name))
             txts = [line[1][0] for line in result[0]]
             scores = [line[1][1] for line in result[0]]
-            print(image_name.split('_'))
-            original_img_name = image_name.split('_')[0:-1]
-            print("{} -> {}".format(image_name, original_img_name))
-            row = [str(''.join(original_img_name) + '.jpg')]
+            image_name = image_name.replace('T_','')
+            image_name = image_name.replace('O_','')
+            print(image_name)
+            row = [image_name]
             processed_txts = ['']   # Adding empty string to filter out empty predictions
             for txt in txts:        # Multiple predictions are available
                 txt = txts[0]
@@ -61,7 +64,18 @@ def main():
                 if txt not in processed_txts:     # Not allowing duplicate predictions
                     processed_txts.extend(txt)
                     row.extend([txt])
-            writer.writerow(row)
+            table.append(row)
+        table.sort(key=lambda row: row[0])
+        i = 0
+        print(len(table))
+        while i < len(table):
+            tmpRow = table[i]
+            if len(table[i + 1]) == 2:
+                tmpRow.extend([table[i + 1][1]])
+            if len(table[i + 2]) == 2:
+                tmpRow.extend([table[i + 2][1]])
+            writer.writerow(table[i])
+            i += 3
 
 
 if __name__ == '__main__':
