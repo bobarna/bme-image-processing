@@ -13,4 +13,4 @@ python3 paddleOCR/main.py
 
 # Merge detections from the same image to a single line with the original image
 # name
-python fix_csv.py
+python3 fix_csv.py

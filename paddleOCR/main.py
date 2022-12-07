@@ -21,11 +21,11 @@ def preprocess(img_dir_path, cleared_path):
     for file in tqdm(dir_list):
         img = cv2.imread(img_dir_path + file, cv2.IMREAD_COLOR)
         #img2 = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        img_cleared = clear(img, True)
-        cv2.imwrite(str(cleared_path / str('T_' + file)), img_cleared)
-        img_cleared = clear(img)
-        cv2.imwrite(str(cleared_path / file), img_cleared)
-        cv2.imwrite(str(cleared_path / str('O_' + file)), img)
+        # img_cleared = clear(img, True)
+        # cv2.imwrite(str(cleared_path / str('T_' + file)), img_cleared)
+        # img_cleared = clear(img)
+        cv2.imwrite(str(cleared_path / file), img)
+        # cv2.imwrite(str(cleared_path / str('O_' + file)), img_cleared)
 
 def main():
     img_dir_path = './images/cutouts/'
@@ -51,6 +51,8 @@ def main():
                 txt = txts[0]
                 txt = txt.replace('.', '-')     # Account for incorrectly recognised delimiter character
                 txt = txt.replace('_', '-')
+                txt = txt.replace(':', '-')
+                txt = txt.upper()
                 delimiter = txt.find('-')
                 txt_len = len(txt)
                 if txt_len > 7:           # If too many characters were recognised
@@ -69,14 +71,13 @@ def main():
         i = 0
         print(len(table))
         while i < len(table):
-            tmpRow = table[i]
-            if len(table[i + 1]) == 2:
-                tmpRow.extend([table[i + 1][1]])
-            if len(table[i + 2]) == 2:
-                tmpRow.extend([table[i + 2][1]])
+            # tmpRow = table[i]
+            # if len(table[i + 1]) == 2:
+            #     tmpRow.extend([table[i + 1][1]])
+            # if len(table[i + 2]) == 2:
+            #     tmpRow.extend([table[i + 2][1]])
             writer.writerow(table[i])
-            i += 3
-
+            i += 1
 
 if __name__ == '__main__':
     main()

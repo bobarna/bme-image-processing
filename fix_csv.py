@@ -23,5 +23,5 @@ with open('output_original.csv', mode='w') as f:
         # Write each line to the output
         f.write("{};{}\n".format(
             r,
-            ';'.join(output_rows[r])
+            ';'.join(set(output_rows[r]))
         ))
